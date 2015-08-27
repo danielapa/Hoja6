@@ -3,7 +3,7 @@
 *Seccion 30
 *Juan Diego Benitez - 14124
 *Daniela Pocasangre - 14162
-*Main
+*MainSet.java
  */
 
 package hdt6;
@@ -23,7 +23,7 @@ public class DriverSet {
         System.out.println("Bienvenido al programa.\nPor favor ingrese el número de personas que van a pertenecer a los conjuntos:");
         int cantpersonas = escaner.nextInt();
         System.out.println("Ingrese la implementacion que desea utilizar.\n1.HashSet 2.TreeSet 3.LinkedHashSet");
-        int implementacion = escaner.nextInt();
+        int implementacion = escaner.nextInt();        
     }
     
 }
