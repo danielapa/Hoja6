@@ -1,7 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+*Algoritmos y Estructuras de Datos
+*Seccion 30
+*Juan Diego Benitez - 14124
+*Daniela Pocasangre - 14162
+*Main
  */
 
 package hdt6;
@@ -11,7 +13,7 @@ import java.util.Scanner;
  *
  * @author Daniela
  */
-public class HDT6 {
+public class DriverSet {
 
     /**
      * @param args the command line arguments
