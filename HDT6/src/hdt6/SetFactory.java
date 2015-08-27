@@ -1,7 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+*Algoritmos y Estructuras de Datos
+*Seccion 30
+*Juan Diego Benitez - 14124
+*Daniela Pocasangre - 14162
+*SetFactory.java
  */
 
 package hdt6;
