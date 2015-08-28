@@ -41,9 +41,17 @@ public class DriverSet {
         String[] nombres = new String[cantpersonas];
         while (true) {
             try {
-                Scanner escanerimp = new Scanner(System.in);
-                System.out.println("Ingrese la implementacion que desea utilizar.\n1.HashSet 2.TreeSet 3.LinkedHashSet");
-                implementacion = escanerimp.nextInt();
+                while (true){
+                    Scanner escanerimp = new Scanner(System.in);
+                    System.out.println("Ingrese la implementacion que desea utilizar.\n1.HashSet \n2.TreeSet \n3.LinkedHashSet");
+                    implementacion = escanerimp.nextInt();
+                    if ((implementacion>3) || (implementacion<=0)){
+                        System.out.println("Por favor ingrese una opcion valida.");
+                    }
+                    else {
+                       break;
+                    }
+                }
                 break;
             }
             catch (Exception e){
@@ -56,9 +64,36 @@ public class DriverSet {
         Set<String> hs3 = setfactory.SetGrupos3(implementacion); /*Set para desarrolladores de Celulares*/
         
         for(int x=0;x<cantpersonas;x++){
-            System.out.println("Ingrese el nombre de la persona: ");
+            System.out.println("Ingrese el nombre de la persona " + (x+1) + ": ");
             nombres[x] = escaner.next();
-            hs1.add(nombres[x]);
+            while (true){
+                try{
+                    while (true){
+                        Scanner escanergrupo = new Scanner(System.in);
+                        System.out.println("Ingrese al grupo al que perdenece. \n1.Desarrollador Java\n2.Desarrollador Web\n3.Desarrollador de Celulares");
+                        int grupo = escanergrupo.nextInt();
+                        if (grupo==1){
+                            hs1.add(nombres[x]);
+                            break;
+                        }
+                        else if (grupo==2){
+                            hs2.add(nombres[x]);
+                            break;
+                        }
+                        else if (grupo==3){
+                            hs3.add(nombres[x]);
+                            break;
+                        }
+                        else if ((grupo<=0) || (grupo>3)){
+                            System.out.println("Por vaor ingrese una opcion valida.");
+                        }
+                    }
+                    break;
+                }
+                catch (Exception j){
+                        System.out.println("Por favor ingrese una opcion valida.");
+                        }
+            }
         }
         
         for(int y=0; y<cantpersonas;y++){
