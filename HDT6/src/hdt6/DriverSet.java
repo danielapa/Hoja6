@@ -17,9 +17,6 @@ import java.util.Set;
  */
 public class DriverSet {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         int contador=0;
         int implementacion; /*Variable en donde se guardara la opcion de menu de la implementacion*/
@@ -59,9 +56,9 @@ public class DriverSet {
             }
         }
         
-        Set<String> hs1 = setfactory.SetGrupos1(implementacion); /*Set para desarrolladores Java */
-        Set<String> hs2 = setfactory.SetGrupos2(implementacion); /*Set para desarrolladores Web */
-        Set<String> hs3 = setfactory.SetGrupos3(implementacion); /*Set para desarrolladores de Celulares*/
+        Set<String> dJava = setfactory.SetGrupos1(implementacion); /*Set para desarrolladores Java */
+        Set<String> dWeb = setfactory.SetGrupos2(implementacion); /*Set para desarrolladores Web */
+        Set<String> dCelular = setfactory.SetGrupos3(implementacion); /*Set para desarrolladores de Celulares*/
         
         for(int x=0;x<cantpersonas;x++){
             System.out.println("Ingrese el nombre de la persona " + (x+1) + ": ");
@@ -70,22 +67,22 @@ public class DriverSet {
                 try{
                     while (true){
                         Scanner escanergrupo = new Scanner(System.in);
-                        System.out.println("Ingrese al grupo al que perdenece. \n1.Desarrollador Java\n2.Desarrollador Web\n3.Desarrollador de Celulares");
+                        System.out.println("Ingrese al grupo al que pertenece. \n1.Desarrollador Java\n2.Desarrollador Web\n3.Desarrollador de Celulares");
                         int grupo = escanergrupo.nextInt();
                         if (grupo==1){
-                            hs1.add(nombres[x]);
+                            dJava.add(nombres[x]);
                             break;
                         }
                         else if (grupo==2){
-                            hs2.add(nombres[x]);
+                            dWeb.add(nombres[x]);
                             break;
                         }
                         else if (grupo==3){
-                            hs3.add(nombres[x]);
+                            dCelular.add(nombres[x]);
                             break;
                         }
                         else if ((grupo<=0) || (grupo>3)){
-                            System.out.println("Por vaor ingrese una opcion valida.");
+                            System.out.println("Por favor ingrese una opcion valida.");
                         }
                     }
                     break;
@@ -96,8 +93,29 @@ public class DriverSet {
             }
         }
         
+        int size = dJava.size();
+        int size1 = dWeb.size();
+        int size2 = dCelular.size();
+        
+        if(size>size1){
+            if(size>size2){
+                System.out.println("El conjunto mayor es el de desarrolladores con Java");
+            }
+        }
+        
+        if(size1>size){
+            if(size1>size2){
+                System.out.println("El conjunto mayor es el de desarrolladores de Web.");
+            }
+        }
+        
+        if(size2>size){
+            if(size2>size1){
+                System.out.println("El conjunto mayor es el de desarrolladores de Celular.");
+            }
+        }
         for(int y=0; y<cantpersonas;y++){
-            if(hs1.contains(nombres[y])){
+            if(dJava.contains(nombres[y])){
                     contador++;
             }
         }
