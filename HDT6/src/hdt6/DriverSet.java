@@ -22,19 +22,38 @@ public class DriverSet {
      */
     public static void main(String[] args) {
         int contador=0;
-        
-        SetFactory setfactory = new SetFactory();
+        int implementacion; /*Variable en donde se guardara la opcion de menu de la implementacion*/
+        int cantpersonas; /*Variable en donde se guardara la cantidad de personas a ingresar*/
         
         Scanner escaner = new Scanner(System.in);
-        System.out.println("Bienvenido al programa.\nPor favor ingrese el número de personas que van a pertenecer a los conjuntos:");
-        int cantpersonas = escaner.nextInt();
+        SetFactory setfactory = new SetFactory();
+        while (true){
+            try {
+                Scanner escanerper = new Scanner(System.in);
+                System.out.println("Bienvenido al programa.\nPor favor ingrese el número de personas que van a pertenecer a los conjuntos:");
+                cantpersonas = escanerper.nextInt();
+                break;
+            }
+            catch (Exception d){
+                System.out.println("Por favor ingrese una opcion valida.");
+            }
+        }
         String[] nombres = new String[cantpersonas];
-        System.out.println("Ingrese la implementacion que desea utilizar.\n1.HashSet 2.TreeSet 3.LinkedHashSet");
-        int implementacion = escaner.nextInt();
+        while (true) {
+            try {
+                Scanner escanerimp = new Scanner(System.in);
+                System.out.println("Ingrese la implementacion que desea utilizar.\n1.HashSet 2.TreeSet 3.LinkedHashSet");
+                implementacion = escanerimp.nextInt();
+                break;
+            }
+            catch (Exception e){
+                System.out.println("Por favor ingrese una opcion valida.");
+            }
+        }
         
-        Set<String> hs1 = setfactory.SetGrupos1(implementacion);
-        Set<String> hs2 = setfactory.SetGrupos2(implementacion);
-        Set<String> hs3 = setfactory.SetGrupos3(implementacion);
+        Set<String> hs1 = setfactory.SetGrupos1(implementacion); /*Set para desarrolladores Java */
+        Set<String> hs2 = setfactory.SetGrupos2(implementacion); /*Set para desarrolladores Web */
+        Set<String> hs3 = setfactory.SetGrupos3(implementacion); /*Set para desarrolladores de Celulares*/
         
         for(int x=0;x<cantpersonas;x++){
             System.out.println("Ingrese el nombre de la persona: ");
