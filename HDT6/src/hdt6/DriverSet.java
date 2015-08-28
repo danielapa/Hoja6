@@ -21,17 +21,20 @@ public class DriverSet {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Set<String> hs1 = new HashSet<String>();
-        Set<String> hs2 = new HashSet<String>();
-        Set<String> hs3 = new HashSet<String>();
         int contador=0;
+        
+        SetFactory setfactory = new SetFactory();
         
         Scanner escaner = new Scanner(System.in);
         System.out.println("Bienvenido al programa.\nPor favor ingrese el número de personas que van a pertenecer a los conjuntos:");
         int cantpersonas = escaner.nextInt();
         String[] nombres = new String[cantpersonas];
         System.out.println("Ingrese la implementacion que desea utilizar.\n1.HashSet 2.TreeSet 3.LinkedHashSet");
-        int implementacion = escaner.nextInt();        
+        int implementacion = escaner.nextInt();
+        
+        Set<String> hs1 = setfactory.SetGrupos1(implementacion);
+        Set<String> hs2 = setfactory.SetGrupos2(implementacion);
+        Set<String> hs3 = setfactory.SetGrupos3(implementacion);
         
         for(int x=0;x<cantpersonas;x++){
             System.out.println("Ingrese el nombre de la persona: ");
