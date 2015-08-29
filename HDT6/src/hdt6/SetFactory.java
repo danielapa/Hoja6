@@ -16,43 +16,43 @@ import java.util.*;
  */
 public class SetFactory {
     public Set SetGrupos1(int implementacion){
-        Set<String> hs1=null;
+        Set<Persona> hs1=null;
         if(implementacion==1){
-            hs1 = new HashSet<String>();
+            hs1 = new HashSet<Persona>();
         }
         if(implementacion==2){
-            hs1 = new TreeSet<String>();
+            hs1 = new TreeSet<Persona>();
         }
         if(implementacion==3){
-            hs1 = new LinkedHashSet<String>();
+            hs1 = new LinkedHashSet<Persona>();
         }
         return hs1;
     }
     
     public Set SetGrupos2(int implementacion){
-        Set<String> hs2=null;
+        Set<Persona> hs2=null;
         if(implementacion==1){
-            hs2 = new HashSet<String>();
+            hs2 = new HashSet<Persona>();
         }
         if(implementacion==2){
-            hs2 = new TreeSet<String>();
+            hs2 = new TreeSet<Persona>();
         }
         if(implementacion==3){
-            hs2 = new LinkedHashSet<String>();
+            hs2 = new LinkedHashSet<Persona>();
         }
         return hs2;
     }
     
     public Set SetGrupos3(int implementacion){
-        Set<String> hs3=null;
+        Set<Persona> hs3=null;
         if(implementacion==1){
-            hs3 = new HashSet<String>();
+            hs3 = new HashSet<Persona>();
         }
         if(implementacion==2){
-            hs3 = new TreeSet<String>();
+            hs3 = new TreeSet<Persona>();
         }
         if(implementacion==3){
-            hs3 = new LinkedHashSet<String>();
+            hs3 = new LinkedHashSet<Persona>();
         }
         return hs3;
     }
