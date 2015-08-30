@@ -83,7 +83,7 @@ public class DriverSet {
                 
             }
             
-            person[x] = new Persona(nombres[x],0,0,0);
+            person[x] = new Persona(nombres[x]);
             
             for (int j = 0; j<cantgrupos; j++){ //Este for nos sirve para meter a la persona a la cantidad de grupos a los que pertenece.
                 while (true){
@@ -94,17 +94,14 @@ public class DriverSet {
                             int grupo = escanergrupo.nextInt();
                             if (grupo==1){ //Si pertenece al grupo de desarrolladores java, los mete en hs1.
                                 dJava.add(person[x]);
-                                person[x].setGrupo1(grupo);
                                 break;
                             }
                             else if (grupo==2){ //Si pertenece al grupo de desarrolladores web, los mete en hs2.
                                 dWeb.add(person[x]);
-                                person[x].setGrupo2(grupo);
                                 break;
                             }
                             else if (grupo==3){ //Si pertenece al grupo de desarrolladores de celulares, los mete en hs3.
                                 dCelular.add(person[x]);
-                                person[x].setGrupo3(grupo);
                                 break;
                             }
                             else if ((grupo<=0) || (grupo>3)){ //Si se ingresa una opcion que no es valida, se muestra al usuario.
