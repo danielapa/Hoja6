@@ -183,8 +183,13 @@ public class DriverSet {
                
        for(int y=0; y<forpersonas;y++){
             System.out.println(person[y]);
-            if(dJava.contains(person[y])){
-                    contador++;
+            if (person[y]==null){
+                
+            }
+            else{
+                if(dJava.contains(person[y])){
+                        contador++;
+                }
             }
         }
         
