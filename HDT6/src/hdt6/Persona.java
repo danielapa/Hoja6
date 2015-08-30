@@ -6,15 +6,13 @@
 package hdt6;
 
 import java.util.Objects;
-
+import java.util.*;
 /**
  *
  * @author dbs_jd
  */
-public class Persona {
+public class Persona implements Comparable<Persona>{
     private String nombre;
-
-
 
     public Persona(String nombre) {
         this.nombre = nombre;
@@ -51,11 +49,14 @@ public class Persona {
         return true;
     }
 
-   
+
     @Override
     public String toString() {
         return "Persona{" + "nombre=" + nombre + '}';
     }
-    
-    
+
+    @Override
+    public int compareTo(Persona o) {
+        return nombre.compareTo(o.nombre);
+    }
 }
