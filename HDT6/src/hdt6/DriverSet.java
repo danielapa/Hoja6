@@ -89,6 +89,7 @@ public class DriverSet {
                     else{
                         binario = binario + 1;
                         System.out.println("Este nombre ya fue ingresado.");
+                        cantpersonas--;
                         g = contapersonas; //"break"
                     }
                 }
@@ -115,8 +116,6 @@ public class DriverSet {
                     }
 
                 }
-                
-                
                 
                 for (int j = 0; j<cantgrupos; j++){ //Este for nos sirve para meter a la persona a la cantidad de grupos a los que pertenece.
                 while (true){
@@ -148,7 +147,7 @@ public class DriverSet {
                     }
                 }
                 
-            }
+                }
                 
                 
             }
@@ -180,9 +179,8 @@ public class DriverSet {
                 System.out.println("El conjunto mayor es el de desarrolladores de Celular.");
             }
         }
-        
-        
-        for(int y=0; y<cantpersonas;y++){
+               
+       for(int y=0; y<cantpersonas;y++){
             System.out.println(person[y]);
             if(dJava.contains(person[y])){
                     contador++;
