@@ -23,6 +23,7 @@ public class DriverSet {
         int cantgrupos; /*Variable en donde se guardara la cantidad de grupos a los que la persona pertenec.*/
         int contapersonas = 0; /*Contador para ver la cantidad de personas que se han ingresado*/
         int binario=0;
+        int forpersonas=0;
         String ingresonom;
         int comparacion; //para el compareTo
         
@@ -89,7 +90,7 @@ public class DriverSet {
                     else{
                         binario = binario + 1;
                         System.out.println("Este nombre ya fue ingresado.");
-                        cantpersonas--;
+                        forpersonas = cantpersonas - 1; //resta cant personas ya que estan repetidas
                         g = contapersonas; //"break"
                     }
                 }
@@ -152,7 +153,7 @@ public class DriverSet {
                 
             }
 
-            System.out.println("Hay " + contapersonas + " personas.");
+            System.out.println("Hay " + forpersonas + " personas.");
 
         }
         
@@ -180,7 +181,7 @@ public class DriverSet {
             }
         }
                
-       for(int y=0; y<cantpersonas;y++){
+       for(int y=0; y<forpersonas;y++){
             System.out.println(person[y]);
             if(dJava.contains(person[y])){
                     contador++;
