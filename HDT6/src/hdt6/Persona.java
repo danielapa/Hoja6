@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.*;
 /**
  *
- * @author dbs_jd
+ * @author Juan Diego Benitez, Daniela Pocasangre
  */
 public class Persona implements Comparable<Persona>{
     private String nombre;

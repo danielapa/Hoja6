@@ -12,7 +12,7 @@ import java.util.Scanner;
 import java.util.Set;
 /**
  *
- * @author Daniela
+ * @author Daniela Pocasangre, Juan Diego Benitez
  */
 public class DriverSet {
 
