@@ -60,7 +60,9 @@ public class DriverSet {
         Set<Persona> dWeb = setfactory.SetGrupos2(implementacion); /*Set para desarrolladores Web */
         Set<Persona> dCelular = setfactory.SetGrupos3(implementacion); /*Set para desarrolladores de Celulares*/
         
-for(int x=0;x<cantpersonas;x++){ //For para pedir la cantidad de datos dependiendo de la cantidad de personas ingresadas anteriormente.
+        Persona[] person = new Persona[cantpersonas];
+        
+        for(int x=0;x<cantpersonas;x++){ //For para pedir la cantidad de datos dependiendo de la cantidad de personas ingresadas anteriormente.
             System.out.println("Ingrese el nombre de la persona " + (x+1) + ": ");
             nombres[x] = escaner.next();
             while (true){
@@ -80,6 +82,9 @@ for(int x=0;x<cantpersonas;x++){ //For para pedir la cantidad de datos dependien
                 }
                 
             }
+            
+            person[x] = new Persona(nombres[x],0,0,0);
+            
             for (int j = 0; j<cantgrupos; j++){ //Este for nos sirve para meter a la persona a la cantidad de grupos a los que pertenece.
                 while (true){
                     try{
@@ -88,21 +93,18 @@ for(int x=0;x<cantpersonas;x++){ //For para pedir la cantidad de datos dependien
                             System.out.println("Ingrese al grupo al que perdenece. \n1.Desarrollador Java\n2.Desarrollador Web\n3.Desarrollador de Celulares");
                             int grupo = escanergrupo.nextInt();
                             if (grupo==1){ //Si pertenece al grupo de desarrolladores java, los mete en hs1.
-                                //dJava.add(nombres[x]);
-                                Persona person = new Persona(nombres[x], grupo);
-                                dJava.add(person);
+                                dJava.add(person[x]);
+                                person[x].setGrupo1(grupo);
                                 break;
                             }
                             else if (grupo==2){ //Si pertenece al grupo de desarrolladores web, los mete en hs2.
-                                Persona person = new Persona(nombres[x], grupo);
-                                dWeb.add(person);
-                                //dWeb.add(nombres[x]);
+                                dWeb.add(person[x]);
+                                person[x].setGrupo2(grupo);
                                 break;
                             }
                             else if (grupo==3){ //Si pertenece al grupo de desarrolladores de celulares, los mete en hs3.
-                                Persona person = new Persona(nombres[x], grupo);
-                                dCelular.add(person);
-                                //dCelular.add(nombres[x]);
+                                dCelular.add(person[x]);
+                                person[x].setGrupo3(grupo);
                                 break;
                             }
                             else if ((grupo<=0) || (grupo>3)){ //Si se ingresa una opcion que no es valida, se muestra al usuario.
@@ -143,8 +145,11 @@ for(int x=0;x<cantpersonas;x++){ //For para pedir la cantidad de datos dependien
                 System.out.println("El conjunto mayor es el de desarrolladores de Celular.");
             }
         }
+        
+        
         for(int y=0; y<cantpersonas;y++){
-            if(dJava.contains(nombres[y])){
+            System.out.println(person[y]);
+            if(dJava.contains(person[y])){
                     contador++;
             }
         }
