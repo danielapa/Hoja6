@@ -21,6 +21,10 @@ public class DriverSet {
         int implementacion; /*Variable en donde se guardara la opcion de menu de la implementacion*/
         int cantpersonas; /*Variable en donde se guardara la cantidad de personas a ingresar*/
         int cantgrupos; /*Variable en donde se guardara la cantidad de grupos a los que la persona pertenec.*/
+        int contapersonas = 0; /*Contador para ver la cantidad de personas que se han ingresado*/
+        int binario=0;
+        String ingresonom;
+        int comparacion; //para el compareTo
         
         Scanner escaner = new Scanner(System.in);
         SetFactory setfactory = new SetFactory();
@@ -64,28 +68,57 @@ public class DriverSet {
         
         for(int x=0;x<cantpersonas;x++){ //For para pedir la cantidad de datos dependiendo de la cantidad de personas ingresadas anteriormente.
             System.out.println("Ingrese el nombre de la persona " + (x+1) + ": ");
-            nombres[x] = escaner.next();
-            while (true){
-                try{
-                    System.out.println("Ingrese la cantidad de grupos a los que la persona pertenece: ");
-                    Scanner escanercant = new Scanner(System.in);
-                    cantgrupos = escanercant.nextInt();
-                    if ((cantgrupos>0) && (cantgrupos<=3)){ /*Si pertenece entre 1 y 3 grupos, es correcto el ingreso.*/
-                        break;
+            ingresonom = escaner.next();
+            
+            if (contapersonas==0){
+                nombres[x] = ingresonom;
+                binario = 0;
+            }              
+            else if (contapersonas>=1){
+                for (int g = 0; g<contapersonas; g++){
+                    if (nombres[g]!=null){
+                        comparacion = nombres[g].compareTo(ingresonom);
                     }
-                    else { /*Si se ingresa un numero mayor que 3 (porque solo hay 3 grupos), o 0, es un error.*/
-                        System.out.println("Por favor ingrese una cantidad valida.");
+                    else {
+                        comparacion = 1;
+                    }
+                    if (comparacion!=0){
+                        binario = 0;
+                        
+                    }
+                    else{
+                        binario = binario + 1;
+                        System.out.println("Este nombre ya fue ingresado.");
+                        g = contapersonas; //"break"
                     }
                 }
-                catch (Exception e){ //Si ingresa una letra (opcion no valida), para evitar que el programa se arruine, utilizamos el try-catch.
-                    System.out.println("Por favor ingrese una cantidad valida.");
-                }
-                
             }
             
-            person[x] = new Persona(nombres[x]);
-            
-            for (int j = 0; j<cantgrupos; j++){ //Este for nos sirve para meter a la persona a la cantidad de grupos a los que pertenece.
+            if (binario==0){
+                nombres[x] = ingresonom;
+                person[x] = new Persona(nombres[x]);
+                contapersonas++;
+                while (true){
+                    try{
+                        System.out.println("Ingrese la cantidad de grupos a los que la persona pertenece: ");
+                        Scanner escanercant = new Scanner(System.in);
+                        cantgrupos = escanercant.nextInt();
+                        if ((cantgrupos>0) && (cantgrupos<=3)){ /*Si pertenece entre 1 y 3 grupos, es correcto el ingreso.*/
+                            break;
+                        }
+                        else { /*Si se ingresa un numero mayor que 3 (porque solo hay 3 grupos), o 0, es un error.*/
+                            System.out.println("Por favor ingrese una cantidad valida.");
+                        }
+                    }
+                    catch (Exception e){ //Si ingresa una letra (opcion no valida), para evitar que el programa se arruine, utilizamos el try-catch.
+                        System.out.println("Por favor ingrese una cantidad valida.");
+                    }
+
+                }
+                
+                
+                
+                for (int j = 0; j<cantgrupos; j++){ //Este for nos sirve para meter a la persona a la cantidad de grupos a los que pertenece.
                 while (true){
                     try{
                         while (true){
@@ -116,7 +149,12 @@ public class DriverSet {
                 }
                 
             }
-           
+                
+                
+            }
+
+            System.out.println("Hay " + contapersonas + " personas.");
+
         }
         
         int size = dJava.size();
