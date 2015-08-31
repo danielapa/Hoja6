@@ -130,7 +130,7 @@ public class DriverSet {
                     try{
                         while (true){
                             Scanner escanergrupo = new Scanner(System.in); //Pedimos al usuario que ingrese al grupo al que pertenece
-                            System.out.println("\nIngrese al grupo al que perdenece. \n1.Desarrollador Java\n2.Desarrollador Web\n3.Desarrollador de Celulares");
+                            System.out.println("\nIngrese al grupo al que pertenece. \n1.Desarrollador Java\n2.Desarrollador Web\n3.Desarrollador de Celulares");
                             int grupo = escanergrupo.nextInt();
                             if (grupo==1){ //Si pertenece al grupo de desarrolladores java, los mete en hs1.
                                 dJava.add(person[x]);
@@ -214,14 +214,33 @@ public class DriverSet {
                 }
             }
         }
-       
+              
         Set<Persona> dJavaT = dJava; /*Set para desarrolladores Java */
         Set<Persona> dWebT = dWeb; /*Set para desarrolladores Web */
         Set<Persona> dCelularT = dCelular; /*Set para desarrolladores de Celulares*/
+
+        Set<Persona> dJava1T = dJava; /*Set para desarrolladores Java */
+        Set<Persona> dWeb1T = dWeb; /*Set para desarrolladores Web */
+        Set<Persona> dCelular1T = dCelular; /*Set para desarrolladores de Celulares*/    
+        
+        Set<Persona> dJava2T = dJava; /*Set para desarrolladores Java */
+        Set<Persona> dWeb2T = dWeb; /*Set para desarrolladores Web */
+        Set<Persona> dCelular2T = dCelular; /*Set para desarrolladores de Celulares*/
+        
+        Set<Persona> dJava3T = dJava; /*Set para desarrolladores Java */
+        Set<Persona> dWeb3T = dWeb; /*Set para desarrolladores Web */
+        Set<Persona> dCelular3T = dCelular; /*Set para desarrolladores de Celulares*/   
+
+        System.out.println(dWeb.isEmpty());
+        System.out.println(dWeb3T.isEmpty());
         
         dWebT.retainAll(dJavaT); //Si el desarrollador de java es tambien desarrollador web
         dWebT.retainAll(dCelularT); //Si esta en los tres grupos
         //Inciso a
+        
+        System.out.println(dWeb.isEmpty());
+        System.out.println(dWeb3T.isEmpty());
+        
         System.out.println("\n");
         
         
@@ -230,10 +249,47 @@ public class DriverSet {
                 System.out.println("La persona " + person[x] + " es desarrollador de Java, Web y Celulares. ");
             }
         }
+            
         
-     
+        dJava1T.removeAll(dWeb1T);
+        dJava1T.removeAll(dCelular1T);
         
-      
+        for(int j=0;j<cantpersonas;j++){
+            if(dJava1T.contains(person[j])){
+                System.out.println("La persona "+person[j]+" tiene experiencia en Java pero no en Web.");
+            }
+            else if(dJava1T.contains(person[j])==false){
+                
+            }
+        }   
+
+        dWeb2T.retainAll(dCelular2T);
+        dWeb2T.removeAll(dJava2T);
+        
+        for(int j=0;j<cantpersonas;j++){
+            if(dWeb2T.contains(person[j])){
+                System.out.println("La persona "+person[j]+" tiene experiencia en Web y Celular pero no en Java.");
+            }
+            else if(dWeb2T.contains(person[j])==false){
+                System.out.println("HOli");
+            }
+        }
+        
+        System.out.println("Tamanio WEB"+dWeb3T.size());
+        
+        dCelular3T.removeAll(dJava3T);
+        dWeb3T.removeAll(dJava3T);
+        dWeb3T.addAll(dCelular3T);
+        
+        for(int k=0;k<cantpersonas;k++){
+            if(dWeb3T.contains(person[k])){
+                System.out.println("La persona "+person[k]+" tiene experiencia en Web o Celular pero no en Java.");
+            }
+            else if(dWeb3T.contains(person[k])==false){
+                System.out.println("HOlisss");
+            }
+        }
+        
         System.out.println(contador);
     }
 }
