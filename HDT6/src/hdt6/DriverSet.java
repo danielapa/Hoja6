@@ -23,7 +23,6 @@ public class DriverSet {
         int cantgrupos; /*Variable en donde se guardara la cantidad de grupos a los que la persona pertenec.*/
         int contapersonas = 0; /*Contador para ver la cantidad de personas que se han ingresado*/
         int binario=0;
-        int forpersonas=0;
         String ingresonom;
         int comparacion; //para el compareTo
         
@@ -90,7 +89,6 @@ public class DriverSet {
                     else{
                         binario = binario + 1;
                         System.out.println("Este nombre ya fue ingresado.");
-                        forpersonas = cantpersonas - 1; //resta cant personas ya que estan repetidas
                         g = contapersonas; //"break"
                     }
                 }
@@ -153,7 +151,7 @@ public class DriverSet {
                 
             }
 
-            System.out.println("Hay " + forpersonas + " personas.");
+            System.out.println("Hay " + cantpersonas + " personas.");
 
         }
         
@@ -167,11 +165,21 @@ public class DriverSet {
             if(size>size2){
                 System.out.println("El conjunto mayor es el de desarrolladores con Java");
             }
+            if(size2>size){
+                if(size2>size1){
+                    System.out.println("El conjunto mayor es el de desarrolladores de Celular");
+                }
+            }
         }
         
         if(size1>size){
             if(size1>size2){
                 System.out.println("El conjunto mayor es el de desarrolladores de Web.");
+            }
+            if(size2>size1){
+                if(size2>size){
+                    System.out.println("El conjunto mayor es el de desarrolladores de Celular");
+                }
             }
         }
         
@@ -179,9 +187,14 @@ public class DriverSet {
             if(size2>size1){
                 System.out.println("El conjunto mayor es el de desarrolladores de Celular.");
             }
+            if(size2>size){
+                if(size1>size){
+                    System.out.println("El conjunto mayor es el de desarrolladores de Web");
+                }
+            }
         }
                
-       for(int y=0; y<forpersonas;y++){
+       for(int y=0; y<cantpersonas;y++){
             System.out.println(person[y]);
             if (person[y]==null){
                 
