@@ -79,6 +79,10 @@ public class DriverSet {
                     if (nombres[g]!=null){
                         comparacion = nombres[g].compareTo(ingresonom);
                     }
+                    else if (nombres[g] == null){
+                        comparacion = 0;
+                        binario = 1;
+                    }
                     else {
                         comparacion = 1;
                     }
@@ -88,8 +92,13 @@ public class DriverSet {
                     }
                     else{
                         binario = binario + 1;
-                        System.out.println("Este nombre ya fue ingresado.");
-                        g = contapersonas; //"break"
+                        if (nombres[g] == null){
+                            
+                        }
+                        else if (nombres[g]!=null){
+                            System.out.println("Este nombre ya fue ingresado.");
+                            g = contapersonas;
+                        } //"break"
                     }
                 }
             }
@@ -100,7 +109,7 @@ public class DriverSet {
                 contapersonas++;
                 while (true){
                     try{
-                        System.out.println("Ingrese la cantidad de grupos a los que la persona pertenece: ");
+                        System.out.println("\nIngrese la cantidad de grupos a los que la persona pertenece: ");
                         Scanner escanercant = new Scanner(System.in);
                         cantgrupos = escanercant.nextInt();
                         if ((cantgrupos>0) && (cantgrupos<=3)){ /*Si pertenece entre 1 y 3 grupos, es correcto el ingreso.*/
@@ -111,7 +120,7 @@ public class DriverSet {
                         }
                     }
                     catch (Exception e){ //Si ingresa una letra (opcion no valida), para evitar que el programa se arruine, utilizamos el try-catch.
-                        System.out.println("Por favor ingrese una cantidad valida.");
+                        System.out.println("Por favor ingrese una cantidad valida.\n");
                     }
 
                 }
@@ -121,7 +130,7 @@ public class DriverSet {
                     try{
                         while (true){
                             Scanner escanergrupo = new Scanner(System.in); //Pedimos al usuario que ingrese al grupo al que pertenece
-                            System.out.println("Ingrese al grupo al que perdenece. \n1.Desarrollador Java\n2.Desarrollador Web\n3.Desarrollador de Celulares");
+                            System.out.println("\nIngrese al grupo al que perdenece. \n1.Desarrollador Java\n2.Desarrollador Web\n3.Desarrollador de Celulares");
                             int grupo = escanergrupo.nextInt();
                             if (grupo==1){ //Si pertenece al grupo de desarrolladores java, los mete en hs1.
                                 dJava.add(person[x]);
@@ -163,33 +172,33 @@ public class DriverSet {
         
         if(size>size1){
             if(size>size2){
-                System.out.println("El conjunto mayor es el de desarrolladores con Java");
+                System.out.println("El conjunto mayor es el de desarrolladores con Java\n");
             }
             if(size2>size){
                 if(size2>size1){
-                    System.out.println("El conjunto mayor es el de desarrolladores de Celular");
+                    System.out.println("El conjunto mayor es el de desarrolladores de Celular\n");
                 }
             }
         }
         
         if(size1>size){
             if(size1>size2){
-                System.out.println("El conjunto mayor es el de desarrolladores de Web.");
+                System.out.println("El conjunto mayor es el de desarrolladores de Web.\n");
             }
             if(size2>size1){
                 if(size2>size){
-                    System.out.println("El conjunto mayor es el de desarrolladores de Celular");
+                    System.out.println("El conjunto mayor es el de desarrolladores de Celular\n");
                 }
             }
         }
         
         if(size2>size){
             if(size2>size1){
-                System.out.println("El conjunto mayor es el de desarrolladores de Celular.");
+                System.out.println("El conjunto mayor es el de desarrolladores de Celular.\n");
             }
             if(size2>size){
                 if(size1>size){
-                    System.out.println("El conjunto mayor es el de desarrolladores de Web");
+                    System.out.println("El conjunto mayor es el de desarrolladores de Web.\n");
                 }
             }
         }
@@ -205,7 +214,26 @@ public class DriverSet {
                 }
             }
         }
+       
+        Set<Persona> dJavaT = dJava; /*Set para desarrolladores Java */
+        Set<Persona> dWebT = dWeb; /*Set para desarrolladores Web */
+        Set<Persona> dCelularT = dCelular; /*Set para desarrolladores de Celulares*/
         
+        dWebT.retainAll(dJavaT); //Si el desarrollador de java es tambien desarrollador web
+        dWebT.retainAll(dCelularT); //Si esta en los tres grupos
+        //Inciso a
+        System.out.println("\n");
+        
+        
+        for (int x = 0; x<cantpersonas; x++){
+            if (dWebT.contains(person[x])){
+                System.out.println("La persona " + person[x] + " es desarrollador de Java, Web y Celulares. ");
+            }
+        }
+        
+     
+        
+      
         System.out.println(contador);
     }
 }
