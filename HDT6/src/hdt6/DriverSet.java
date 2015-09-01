@@ -298,8 +298,10 @@ public class DriverSet {
         
         
         for (int x = 0; x<cantpersonas; x++){
-            if (dWebT.contains(person[x])){
-                System.out.println("La persona " + person[x] + " es desarrollador de Java, Web y Celulares. ");
+            if (person[x] != null){
+                if (dWebT.contains(person[x])){
+                    System.out.println("La persona " + person[x] + " es desarrollador de Java, Web y Celulares. ");
+                }
             }
         }
             
@@ -308,11 +310,13 @@ public class DriverSet {
         dJava1T.removeAll(dCelular1T);
         
         for(int j=0;j<cantpersonas;j++){
-            if(dJava1T.contains(person[j])){
-                System.out.println("La persona "+person[j]+" tiene experiencia en Java pero no en Web.");
-            }
-            else if(dJava1T.contains(person[j])==false){
-                
+            if(person[j] != null){
+                if(dJava1T.contains(person[j])){
+                    System.out.println("La persona "+person[j]+" tiene experiencia en Java pero no en Web.");
+                }
+                else if(dJava1T.contains(person[j])==false){
+
+                }
             }
         }   
 
@@ -320,11 +324,13 @@ public class DriverSet {
         dWeb2T.removeAll(dJava2T);
         
         for(int j=0;j<cantpersonas;j++){
-            if(dWeb2T.contains(person[j])){
-                System.out.println("La persona "+person[j]+" tiene experiencia en Web y Celular pero no en Java.");
-            }
-            else if(dWeb2T.contains(person[j])==false){
-                System.out.println("HOli");
+            if (person[j] != null){
+                if(dWeb2T.contains(person[j])){
+                    System.out.println("La persona "+person[j]+" tiene experiencia en Web y Celular pero no en Java.");
+                }
+                else if(dWeb2T.contains(person[j])==false){
+                    System.out.println("HOli");
+                }
             }
         }
         
@@ -335,11 +341,13 @@ public class DriverSet {
         dWeb3T.addAll(dCelular3T);
         
         for(int k=0;k<cantpersonas;k++){
-            if(dWeb3T.contains(person[k])){
-                System.out.println("La persona "+person[k]+" tiene experiencia en Web o Celular pero no en Java.");
-            }
-            else if(dWeb3T.contains(person[k])==false){
-                System.out.println("HOlisss");
+            if (person[k] != null){
+                if(dWeb3T.contains(person[k])){
+                    System.out.println("La persona "+person[k]+" tiene experiencia en Web o Celular pero no en Java.");
+                }
+                else if(dWeb3T.contains(person[k])==false){
+                    System.out.println("HOlisss");
+                }
             }
         }
         
