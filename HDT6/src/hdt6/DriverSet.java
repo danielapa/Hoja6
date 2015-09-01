@@ -283,16 +283,15 @@ public class DriverSet {
         Set<Persona> dCelular3T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
         dCelular3T.addAll(dCelular);        
 
+        Set<Persona> dJava4T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        dJava4T.addAll(dJava);
+        Set<Persona> dWeb4T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        dWeb4T.addAll(dWeb); 
 
-        System.out.println(dWeb.isEmpty());
-        System.out.println(dWeb3T.isEmpty());
         
         dWebT.retainAll(dJavaT); //Si el desarrollador de java es tambien desarrollador web
         dWebT.retainAll(dCelularT); //Si esta en los tres grupos
         //Inciso a
-        
-        System.out.println(dWeb.isEmpty());
-        System.out.println(dWeb3T.isEmpty());
         
         System.out.println("\n");
         
@@ -329,13 +328,11 @@ public class DriverSet {
                     System.out.println("La persona "+person[j]+" tiene experiencia en Web y Celular pero no en Java.");
                 }
                 else if(dWeb2T.contains(person[j])==false){
-                    System.out.println("HOli");
+                    
                 }
             }
         }
-        
-        System.out.println("Tamanio WEB"+dWeb3T.size());
-        
+                
         dCelular3T.removeAll(dJava3T);
         dWeb3T.removeAll(dJava3T);
         dWeb3T.addAll(dCelular3T);
@@ -346,9 +343,17 @@ public class DriverSet {
                     System.out.println("La persona "+person[k]+" tiene experiencia en Web o Celular pero no en Java.");
                 }
                 else if(dWeb3T.contains(person[k])==false){
-                    System.out.println("HOlisss");
+                    
                 }
             }
+        }
+        
+        dJava4T.retainAll(dWeb4T);
+        if(dWeb4T.size()==dJava4T.size()){
+            System.out.println("\nEl conjunto de Desarrolladores Java es un subconjunto de Desarrolladores Web\n");
+        }
+        else if(dWeb4T.size()!=dJava4T.size()){
+            System.out.println("\nEl conjunto de Desarrolladores Java NO es un subconjunto de Desarrolladores Web\n");
         }
         
         System.out.println(contador);
