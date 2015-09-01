@@ -64,6 +64,8 @@ public class DriverSet {
         Set<Persona> dWeb = setfactory.SetGrupos2(implementacion); /*Set para desarrolladores Web */
         Set<Persona> dCelular = setfactory.SetGrupos3(implementacion); /*Set para desarrolladores de Celulares*/
         
+        Set<Persona> inciso4 = dJava;
+        
         Persona[] person = new Persona[cantpersonas];
         
         for(int x=0;x<cantpersonas;x++){ //For para pedir la cantidad de datos dependiendo de la cantidad de personas ingresadas anteriormente.
@@ -214,22 +216,59 @@ public class DriverSet {
                 }
             }
         }
-              
-        Set<Persona> dJavaT = dJava; /*Set para desarrolladores Java */
-        Set<Persona> dWebT = dWeb; /*Set para desarrolladores Web */
-        Set<Persona> dCelularT = dCelular; /*Set para desarrolladores de Celulares*/
+       
+       
+       //primeros tres incisos
+       for (int x = 0; x<cantpersonas; x++){
+           if((dWeb.contains(person[x])) && (dJava.contains(person[x])) && (dCelular.contains(person[x]))){ //inciso 1
+              System.out.println("La persona " + person[x] + " es desarrolladora en las tres areas.");
+           }
+           
+           if ((dJava.contains(person[x])) && (dWeb.contains(person[x]) == false)){ //inciso 2
+               System.out.println("La persona " + person[x] +  " tiene experiencia en Java pero no en Web.");
+           }
+           
+           if ((dJava.contains(person[x]) == false) && (dWeb.contains(person[x]) && (dCelular.contains(person[x])))){ //inciso 3
+               System.out.println("La persona " + person[x] + " Tiene experiencia en Web y Celulares, pero no en Java.");
+           }
+           //para el inciso 4 hacemos la union de los desarrolladores web y de celulares, por lo que los agregamos a otro set.
+           //Como el Set no acepta repetidos, no habra problema con los que se repitan.
+           //Creo que esta agregando repetidos.
+           if (dWeb.contains(person[x])){
+               inciso4.add(person[x]);
+           }
+           if (dCelular.contains(person[x])){
+               inciso4.add(person[x]);
+           }
+       }
+       
+       //Inciso 4: (este no quiere servirrrr)
+       for (int x = 0; x<cantpersonas; x++){
+           System.out.println("Size inciso4: " +inciso4.size());
+           if (inciso4.contains(person[x])){ //solo trabajamos con los que esten metidos en inciso4.
+               if (dJava.contains(person[x]) == false){
+                   //Ok, person[x] si esta en inciso 4, entonces ya comparamos. Solo nos interesa si no lo contiene
+                   System.out.println("La persona " + person[x] + " o tiene experiencia en web o celulares, pero no en java.");
+               }
+           }
+       }
+       
+        /*      
+        Set<Persona> dJavaT = dJava; //Set para desarrolladores Java 
+        Set<Persona> dWebT = dWeb; //Set para desarrolladores Web 
+        Set<Persona> dCelularT = dCelular; //Set para desarrolladores de Celulares
 
-        Set<Persona> dJava1T = dJava; /*Set para desarrolladores Java */
-        Set<Persona> dWeb1T = dWeb; /*Set para desarrolladores Web */
-        Set<Persona> dCelular1T = dCelular; /*Set para desarrolladores de Celulares*/    
+        Set<Persona> dJava1T = dJava; //Set para desarrolladores Java 
+        Set<Persona> dWeb1T = dWeb; //Set para desarrolladores Web 
+        Set<Persona> dCelular1T = dCelular; //Set para desarrolladores de Celulares*   
         
-        Set<Persona> dJava2T = dJava; /*Set para desarrolladores Java */
-        Set<Persona> dWeb2T = dWeb; /*Set para desarrolladores Web */
-        Set<Persona> dCelular2T = dCelular; /*Set para desarrolladores de Celulares*/
+        Set<Persona> dJava2T = dJava; //Set para desarrolladores Java 
+        Set<Persona> dWeb2T = dWeb; //Set para desarrolladores Web 
+        Set<Persona> dCelular2T = dCelular; //Set para desarrolladores de Celulares
         
-        Set<Persona> dJava3T = dJava; /*Set para desarrolladores Java */
-        Set<Persona> dWeb3T = dWeb; /*Set para desarrolladores Web */
-        Set<Persona> dCelular3T = dCelular; /*Set para desarrolladores de Celulares*/   
+        Set<Persona> dJava3T = dJava; //Set para desarrolladores Java 
+        Set<Persona> dWeb3T = dWeb; //Set para desarrolladores Web 
+        Set<Persona> dCelular3T = dCelular; //Set para desarrolladores de Celulares*  
 
         System.out.println(dWeb.isEmpty());
         System.out.println(dWeb3T.isEmpty());
@@ -289,7 +328,7 @@ public class DriverSet {
                 System.out.println("HOlisss");
             }
         }
-        
+        */
         System.out.println(contador);
     }
 }
