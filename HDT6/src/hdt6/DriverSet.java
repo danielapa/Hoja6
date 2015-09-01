@@ -219,7 +219,7 @@ public class DriverSet {
        
        
        //primeros tres incisos
-       for (int x = 0; x<cantpersonas; x++){
+       /*for (int x = 0; x<cantpersonas; x++){
            if((dWeb.contains(person[x])) && (dJava.contains(person[x])) && (dCelular.contains(person[x]))){ //inciso 1
               System.out.println("La persona " + person[x] + " es desarrolladora en las tres areas.");
            }
@@ -251,24 +251,38 @@ public class DriverSet {
                    System.out.println("La persona " + person[x] + " o tiene experiencia en web o celulares, pero no en java.");
                }
            }
-       }
+       }*/
        
-        /*      
-        Set<Persona> dJavaT = dJava; //Set para desarrolladores Java 
-        Set<Persona> dWebT = dWeb; //Set para desarrolladores Web 
-        Set<Persona> dCelularT = dCelular; //Set para desarrolladores de Celulares
+              
+        Set<Persona> dJavaT = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        dJavaT.addAll(dJava);
+        Set<Persona> dWebT = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        dWebT.addAll(dWeb);
+        Set<Persona> dCelularT = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        dCelularT.addAll(dCelular);
+        
+              
+        Set<Persona> dJava1T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        dJava1T.addAll(dJava);
+        Set<Persona> dWeb1T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        dWeb1T.addAll(dWeb);
+        Set<Persona> dCelular1T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        dCelular1T.addAll(dCelular);        
+        
+        Set<Persona> dJava2T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        dJava2T.addAll(dJava);
+        Set<Persona> dWeb2T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        dWeb2T.addAll(dWeb);
+        Set<Persona> dCelular2T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        dCelular2T.addAll(dCelular);  
+        
+        Set<Persona> dJava3T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        dJava3T.addAll(dJava);
+        Set<Persona> dWeb3T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        dWeb3T.addAll(dWeb);
+        Set<Persona> dCelular3T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        dCelular3T.addAll(dCelular);        
 
-        Set<Persona> dJava1T = dJava; //Set para desarrolladores Java 
-        Set<Persona> dWeb1T = dWeb; //Set para desarrolladores Web 
-        Set<Persona> dCelular1T = dCelular; //Set para desarrolladores de Celulares*   
-        
-        Set<Persona> dJava2T = dJava; //Set para desarrolladores Java 
-        Set<Persona> dWeb2T = dWeb; //Set para desarrolladores Web 
-        Set<Persona> dCelular2T = dCelular; //Set para desarrolladores de Celulares
-        
-        Set<Persona> dJava3T = dJava; //Set para desarrolladores Java 
-        Set<Persona> dWeb3T = dWeb; //Set para desarrolladores Web 
-        Set<Persona> dCelular3T = dCelular; //Set para desarrolladores de Celulares*  
 
         System.out.println(dWeb.isEmpty());
         System.out.println(dWeb3T.isEmpty());
@@ -328,7 +342,7 @@ public class DriverSet {
                 System.out.println("HOlisss");
             }
         }
-        */
+        
         System.out.println(contador);
     }
 }
