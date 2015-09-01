@@ -65,7 +65,6 @@ public class DriverSet {
         Set<Persona> dWeb = setfactory.SetGrupos2(implementacion); /*Set para desarrolladores Web */
         Set<Persona> dCelular = setfactory.SetGrupos3(implementacion); /*Set para desarrolladores de Celulares*/
         
-        Set<Persona> inciso4 = dJava;
         
         Persona[] person = new Persona[cantpersonas];
         
@@ -173,13 +172,13 @@ public class DriverSet {
         
         System.out.println(size + "\n" + size1 + "\n" + size2 + "\n");
         
-        int contajavas = 0;
-        if(size>size1){
-            if(size>size2){
+        int contajavas = 0; //Contador para la posicion del array de los nombres.
+        if(size>size1){ //Si hay mas en java que en web
+            if(size>size2){ //Si hay mas en java que en celulares
                 System.out.println("El conjunto mayor es el de desarrolladores con Java\n");
-                String[] javas = new String[dJava.size()];
+                String[] javas = new String[dJava.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
                 for (int x = 0; x<cantpersonas; x++){
-                    if (dJava.contains(person[x])){
+                    if (dJava.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
                         javas[contajavas] = person[x].getNombre();
                         contajavas++;
                     }
@@ -187,18 +186,18 @@ public class DriverSet {
                 //Ordenamos el array
                 Arrays.sort(javas);
                 System.out.println("-------------");
-                for (int x = 0; x<dJava.size(); x++){
+                for (int x = 0; x<dJava.size(); x++){ //Se imprimen los nombres
                     System.out.println(javas[x]);
                 }
                 System.out.println("-------------");
             }
-            int contacelus = 0;
-            if(size2>size){
+            int contacelus = 0; //Contador para la posicion del array de los nombres.
+            if(size2>size){ //si hay mas en celulares que en java
                 if(size2>size1){
                     System.out.println("El conjunto mayor es el de desarrolladores de Celular\n");
-                    String[] celus = new String[dCelular.size()];
+                    String[] celus = new String[dCelular.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
                     for (int x = 0; x<cantpersonas; x++){
-                        if (dCelular.contains(person[x])){
+                        if (dCelular.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
                             celus[contacelus] = person[x].getNombre();
                             contacelus++;
                         }
@@ -206,20 +205,20 @@ public class DriverSet {
                     //Ordenamos el array
                     Arrays.sort(celus);
                     System.out.println("-------------");
-                    for (int x = 0; x<dJava.size(); x++){
+                    for (int x = 0; x<dJava.size(); x++){ //Se imprimen los nombres
                         System.out.println(celus[x]);
                     }
                     System.out.println("-------------");
                 }
             }
         }
-        int contawebs = 0;
-        if(size1>size){
-            if(size1>size2){
+        int contawebs = 0; //Contador para la posicion del array de los nombres.
+        if(size1>size){ //si hay mas en web que en java
+            if(size1>size2){ //si hay mas en web que en celulares
                 System.out.println("El conjunto mayor es el de desarrolladores de Web.\n");
-                String[] webs = new String[dWeb.size()];
+                String[] webs = new String[dWeb.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
                 for (int x = 0; x<cantpersonas; x++){
-                    if (dWeb.contains(person[x])){
+                    if (dWeb.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
                         webs[contawebs] = person[x].getNombre();
                         contawebs++;
                     }
@@ -227,18 +226,17 @@ public class DriverSet {
                 //Ordenamos el array
                 Arrays.sort(webs);
                 System.out.println("-------------");
-                for (int x = 0; x<dWeb.size(); x++){
+                for (int x = 0; x<dWeb.size(); x++){ //Se imprimen los nombres
                     System.out.println(webs[x]);
                 }
                 System.out.println("-------------");
             }
-            int contacelus2 = 0;
+            int contacelus2 = 0; //Contador para la posicion del array de los nombres.
             if(size2>size1){
-                //if(size2>size){
                     System.out.println("El conjunto mayor es el de desarrolladores de Celular\n");
-                    String[] celus2 = new String[dCelular.size()];
+                    String[] celus2 = new String[dCelular.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
                     for (int x = 0; x<cantpersonas; x++){
-                        if (dCelular.contains(person[x])){
+                        if (dCelular.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
                             celus2[contacelus2] = person[x].getNombre();
                             contacelus2++;
                         }
@@ -246,20 +244,19 @@ public class DriverSet {
                     //Ordenamos el array
                     Arrays.sort(celus2);
                     System.out.println("-------------");
-                    for (int x = 0; x<dCelular.size(); x++){
+                    for (int x = 0; x<dCelular.size(); x++){ //Se imprimen los nombres
                         System.out.println(celus2[x]);
                     }
                     System.out.println("-------------");
-                //}
             }
         }
-        int contacelus3 = 0;
+        int contacelus3 = 0; //Contador para la posicion del array de los nombres.
         if(size2>size){
             if(size2>size1){
                 System.out.println("El conjunto mayor es el de desarrolladores de Celular.\n");
-                    String[] celus3 = new String[dCelular.size()];
+                    String[] celus3 = new String[dCelular.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
                     for (int x = 0; x<cantpersonas; x++){
-                        if (dCelular.contains(person[x])){
+                        if (dCelular.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
                             celus3[contacelus3] = person[x].getNombre();
                             contacelus3++;
                         }
@@ -267,18 +264,17 @@ public class DriverSet {
                     //Ordenamos el array
                     Arrays.sort(celus3);
                     System.out.println("-------------");
-                    for (int x = 0; x<dCelular.size(); x++){
+                    for (int x = 0; x<dCelular.size(); x++){ //Se imprimen los nombres
                         System.out.println(celus3[x]);
                     }
                     System.out.println("-------------");
             }
-            int contawebs2 = 0;
+            int contawebs2 = 0; //Contador para la posicion del array de los nombres.
             if(size1>size2){
-                //if(size2>size1){
                     System.out.println("El conjunto mayor es el de desarrolladores de Web.\n");
-                    String[] webs2 = new String[dWeb.size()];
+                    String[] webs2 = new String[dWeb.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
                     for (int x = 0; x<cantpersonas; x++){
-                        if (dWeb.contains(person[x])){
+                        if (dWeb.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
                             webs2[contawebs2] = person[x].getNombre();
                             contawebs2++;
                         }
@@ -286,11 +282,10 @@ public class DriverSet {
                     //Ordenamos el array
                     Arrays.sort(webs2);
                     System.out.println("-------------");
-                    for (int x = 0; x<dWeb.size(); x++){
+                    for (int x = 0; x<dWeb.size(); x++){ //Se imprimen los nombres
                         System.out.println(webs2[x]);
                     }
                     System.out.println("-------------");
-                //}
             }
         }
                
@@ -305,76 +300,39 @@ public class DriverSet {
                 }
             }
         }
-       
-       
-       //primeros tres incisos
-       /*for (int x = 0; x<cantpersonas; x++){
-           if((dWeb.contains(person[x])) && (dJava.contains(person[x])) && (dCelular.contains(person[x]))){ //inciso 1
-              System.out.println("La persona " + person[x] + " es desarrolladora en las tres areas.");
-           }
-           
-           if ((dJava.contains(person[x])) && (dWeb.contains(person[x]) == false)){ //inciso 2
-               System.out.println("La persona " + person[x] +  " tiene experiencia en Java pero no en Web.");
-           }
-           
-           if ((dJava.contains(person[x]) == false) && (dWeb.contains(person[x]) && (dCelular.contains(person[x])))){ //inciso 3
-               System.out.println("La persona " + person[x] + " Tiene experiencia en Web y Celulares, pero no en Java.");
-           }
-           //para el inciso 4 hacemos la union de los desarrolladores web y de celulares, por lo que los agregamos a otro set.
-           //Como el Set no acepta repetidos, no habra problema con los que se repitan.
-           //Creo que esta agregando repetidos.
-           if (dWeb.contains(person[x])){
-               inciso4.add(person[x]);
-           }
-           if (dCelular.contains(person[x])){
-               inciso4.add(person[x]);
-           }
-       }
-       
-       //Inciso 4: (este no quiere servirrrr)
-       for (int x = 0; x<cantpersonas; x++){
-           System.out.println("Size inciso4: " +inciso4.size());
-           if (inciso4.contains(person[x])){ //solo trabajamos con los que esten metidos en inciso4.
-               if (dJava.contains(person[x]) == false){
-                   //Ok, person[x] si esta en inciso 4, entonces ya comparamos. Solo nos interesa si no lo contiene
-                   System.out.println("La persona " + person[x] + " o tiene experiencia en web o celulares, pero no en java.");
-               }
-           }
-       }*/
-       
-              
+                     
         Set<Persona> dJavaT = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
         dJavaT.addAll(dJava);
-        Set<Persona> dWebT = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        Set<Persona> dWebT = setfactory.SetGrupos3(implementacion); //Set para desarrolladores web 
         dWebT.addAll(dWeb);
-        Set<Persona> dCelularT = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        Set<Persona> dCelularT = setfactory.SetGrupos3(implementacion); //Set para desarrolladores de celulares 
         dCelularT.addAll(dCelular);
         
               
         Set<Persona> dJava1T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
         dJava1T.addAll(dJava);
-        Set<Persona> dWeb1T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        Set<Persona> dWeb1T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores web 
         dWeb1T.addAll(dWeb);
-        Set<Persona> dCelular1T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        Set<Persona> dCelular1T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores de celulares 
         dCelular1T.addAll(dCelular);        
         
         Set<Persona> dJava2T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
         dJava2T.addAll(dJava);
-        Set<Persona> dWeb2T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        Set<Persona> dWeb2T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores web 
         dWeb2T.addAll(dWeb);
-        Set<Persona> dCelular2T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        Set<Persona> dCelular2T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores de celulares 
         dCelular2T.addAll(dCelular);  
         
         Set<Persona> dJava3T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
         dJava3T.addAll(dJava);
-        Set<Persona> dWeb3T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        Set<Persona> dWeb3T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Web 
         dWeb3T.addAll(dWeb);
-        Set<Persona> dCelular3T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        Set<Persona> dCelular3T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores de Celulares
         dCelular3T.addAll(dCelular);        
 
         Set<Persona> dJava4T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
         dJava4T.addAll(dJava);
-        Set<Persona> dWeb4T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
+        Set<Persona> dWeb4T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores web 
         dWeb4T.addAll(dWeb); 
 
         
