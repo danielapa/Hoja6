@@ -10,6 +10,7 @@ package hdt6;
 
 import java.util.Scanner;
 import java.util.Set;
+import java.util.Arrays;
 /**
  *
  * @author Daniela Pocasangre, Juan Diego Benitez
