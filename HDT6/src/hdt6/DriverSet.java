@@ -47,7 +47,7 @@ public class DriverSet {
                     Scanner escanerimp = new Scanner(System.in);
                     System.out.println("Ingrese la implementacion que desea utilizar.\n1.HashSet \n2.TreeSet \n3.LinkedHashSet");
                     implementacion = escanerimp.nextInt();
-                    if ((implementacion>3) || (implementacion<=0)){
+                    if ((implementacion>3) || (implementacion<=0)){ //si no es entre 1 y 3, no es valido
                         System.out.println("Por favor ingrese una opcion valida.");
                     }
                     else {
@@ -69,27 +69,27 @@ public class DriverSet {
         Persona[] person = new Persona[cantpersonas];
         
         for(int x=0;x<cantpersonas;x++){ //For para pedir la cantidad de datos dependiendo de la cantidad de personas ingresadas anteriormente.
-            System.out.println("Ingrese el nombre de la persona " + (x+1) + ": ");
+            System.out.println("\nIngrese el nombre de la persona " + (x+1) + ": ");
             ingresonom = escaner.next();
             
-            if (contapersonas==0){
+            if (contapersonas==0){ //si es la primera persona, se ingresa su nombre
                 nombres[x] = ingresonom;
                 binario = 0;
             }              
             else if (contapersonas>=1){
                 for (int g = 0; g<contapersonas; g++){
-                    if (nombres[g]!=null){
+                    if (nombres[g]!=null){ //comparacion con nombres anteriores para determinar si es repetido
                         comparacion = nombres[g].compareTo(ingresonom);
                     }
-                    else if (nombres[g] == null){
+                    else if (nombres[g] == null){ //si no hay nombre
                         comparacion = 0;
                         binario = 1;
                     }
                     else {
-                        comparacion = 1;
+                        comparacion = 1; 
                     }
                     if (comparacion!=0){
-                        binario = 0;
+                        binario = 0; //si no hay nombre repetido, se ingresa a los sets
                         
                     }
                     else{
@@ -97,7 +97,7 @@ public class DriverSet {
                         if (nombres[g] == null){
                             
                         }
-                        else if (nombres[g]!=null){
+                        else if (nombres[g]!=null){ //si el nombre es repetido, se avisa y se salta esa posicion
                             System.out.println("Este nombre ya fue ingresado.");
                             g = contapersonas;
                         } //"break"
@@ -169,13 +169,11 @@ public class DriverSet {
         int size = dJava.size();
         int size1 = dWeb.size();
         int size2 = dCelular.size();
-        
-        System.out.println(size + "\n" + size1 + "\n" + size2 + "\n");
-        
+                
         int contajavas = 0; //Contador para la posicion del array de los nombres.
         if(size>size1){ //Si hay mas en java que en web
             if(size>size2){ //Si hay mas en java que en celulares
-                System.out.println("El conjunto mayor es el de desarrolladores con Java\n");
+                System.out.println("\nEl conjunto mayor es el de desarrolladores con Java\n");
                 String[] javas = new String[dJava.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
                 for (int x = 0; x<cantpersonas; x++){
                     if (dJava.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
@@ -194,7 +192,7 @@ public class DriverSet {
             int contacelus = 0; //Contador para la posicion del array de los nombres.
             if(size2>size){ //si hay mas en celulares que en java
                 if(size2>size1){
-                    System.out.println("El conjunto mayor es el de desarrolladores de Celular\n");
+                    System.out.println("\nEl conjunto mayor es el de desarrolladores de Celular\n");
                     String[] celus = new String[dCelular.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
                     for (int x = 0; x<cantpersonas; x++){
                         if (dCelular.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
@@ -215,7 +213,7 @@ public class DriverSet {
         int contawebs = 0; //Contador para la posicion del array de los nombres.
         if(size1>size){ //si hay mas en web que en java
             if(size1>size2){ //si hay mas en web que en celulares
-                System.out.println("El conjunto mayor es el de desarrolladores de Web.\n");
+                System.out.println("\nEl conjunto mayor es el de desarrolladores de Web.\n");
                 String[] webs = new String[dWeb.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
                 for (int x = 0; x<cantpersonas; x++){
                     if (dWeb.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
@@ -233,7 +231,7 @@ public class DriverSet {
             }
             int contacelus2 = 0; //Contador para la posicion del array de los nombres.
             if(size2>size1){
-                    System.out.println("El conjunto mayor es el de desarrolladores de Celular\n");
+                    System.out.println("\nEl conjunto mayor es el de desarrolladores de Celular\n");
                     String[] celus2 = new String[dCelular.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
                     for (int x = 0; x<cantpersonas; x++){
                         if (dCelular.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
@@ -253,7 +251,7 @@ public class DriverSet {
         int contacelus3 = 0; //Contador para la posicion del array de los nombres.
         if(size2>size){
             if(size2>size1){
-                System.out.println("El conjunto mayor es el de desarrolladores de Celular.\n");
+                System.out.println("\nEl conjunto mayor es el de desarrolladores de Celular.\n");
                     String[] celus3 = new String[dCelular.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
                     for (int x = 0; x<cantpersonas; x++){
                         if (dCelular.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
@@ -271,7 +269,7 @@ public class DriverSet {
             }
             int contawebs2 = 0; //Contador para la posicion del array de los nombres.
             if(size1>size2){
-                    System.out.println("El conjunto mayor es el de desarrolladores de Web.\n");
+                    System.out.println("\nEl conjunto mayor es el de desarrolladores de Web.\n");
                     String[] webs2 = new String[dWeb.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
                     for (int x = 0; x<cantpersonas; x++){
                         if (dWeb.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
@@ -300,7 +298,8 @@ public class DriverSet {
                 }
             }
         }
-                     
+     
+       /*Temporales utilizados para realizar intersecciones y uniones*/
         Set<Persona> dJavaT = setfactory.SetGrupos3(implementacion); //Set para desarrolladores Java 
         dJavaT.addAll(dJava);
         Set<Persona> dWebT = setfactory.SetGrupos3(implementacion); //Set para desarrolladores web 
@@ -334,12 +333,11 @@ public class DriverSet {
         dJava4T.addAll(dJava);
         Set<Persona> dWeb4T = setfactory.SetGrupos3(implementacion); //Set para desarrolladores web 
         dWeb4T.addAll(dWeb); 
-
         
         dWebT.retainAll(dJavaT); //Si el desarrollador de java es tambien desarrollador web
         dWebT.retainAll(dCelularT); //Si esta en los tres grupos
-        //Inciso a
         
+        //Inciso a        
         System.out.println("\n");
         
         
@@ -394,15 +392,13 @@ public class DriverSet {
                 }
             }
         }
-        
-        dJava4T.retainAll(dWeb4T);
-        if(dWeb4T.size()==dJava4T.size()){
+
+        if(dWeb4T.containsAll(dJava4T)){
             System.out.println("\nEl conjunto de Desarrolladores Java es un subconjunto de Desarrolladores Web\n");
         }
-        else if(dWeb4T.size()!=dJava4T.size()){
+        else if(!dWeb4T.containsAll(dJava4T)){
             System.out.println("\nEl conjunto de Desarrolladores Java NO es un subconjunto de Desarrolladores Web\n");
         }
         
-        System.out.println(contador);
     }
 }
