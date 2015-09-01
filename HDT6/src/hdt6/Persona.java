@@ -5,7 +5,7 @@
 *Daniela Pocasangre - 14162
 *Persona.java
  */
-package hdt6;
+//package hdt6;
 
 import java.util.Objects;
 import java.util.*;

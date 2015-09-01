@@ -6,7 +6,7 @@
 *MainSet.java
  */
 
-package hdt6;
+//package hdt6;
 
 import java.util.Arrays;
 import java.util.Collections;

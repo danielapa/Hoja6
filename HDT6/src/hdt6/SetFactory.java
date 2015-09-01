@@ -6,13 +6,13 @@
 *SetFactory.java
  */
 
-package hdt6;
+//package hdt6;
 
 import java.util.*;
 
 /**
  *
- * @author Daniela
+ * @author Juan Diego Benitez, Daniela Pocasangre
  */
 public class SetFactory {
     public Set SetGrupos1(int implementacion){
