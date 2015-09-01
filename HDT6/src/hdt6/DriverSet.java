@@ -8,9 +8,11 @@
 
 package hdt6;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
-import java.util.Arrays;
 /**
  *
  * @author Daniela Pocasangre, Juan Diego Benitez
@@ -169,7 +171,7 @@ public class DriverSet {
         int size = dJava.size();
         int size1 = dWeb.size();
         int size2 = dCelular.size();
-                
+/*                
         int contajavas = 0; //Contador para la posicion del array de los nombres.
         if(size>size1){ //Si hay mas en java que en web
             if(size>size2){ //Si hay mas en java que en celulares
@@ -286,7 +288,7 @@ public class DriverSet {
                     System.out.println("-------------");
             }
         }
-               
+               */
        for(int y=0; y<cantpersonas;y++){
             System.out.println(person[y]);
             if (person[y]==null){
@@ -400,5 +402,66 @@ public class DriverSet {
             System.out.println("\nEl conjunto de Desarrolladores Java NO es un subconjunto de Desarrolladores Web\n");
         }
         
+        Set<Integer> sizing = setfactory.SetSizing(implementacion); /*Set para desarrolladores Java */
+        sizing.add(size);
+        sizing.add(size1);
+        sizing.add(size2);
+        
+        System.out.println(Collections.max(sizing));
+        
+        if(Collections.max(sizing)==size){
+            int contajavas =0;
+            System.out.println("\nEl conjunto mayor es el de desarrolladores con Java\n");
+            String[] javas = new String[dJava.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
+            for (int x = 0; x<cantpersonas; x++){
+                if (dJava.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
+                    javas[contajavas] = person[x].getNombre();
+                    contajavas++;
+                }
+            }
+            //Ordenamos el array
+            Arrays.sort(javas);
+            System.out.println("-------------");
+            for (int x = 0; x<dJava.size(); x++){ //Se imprimen los nombres
+                System.out.println(javas[x]);
+            }
+            System.out.println("-------------");
+        }
+        else if(Collections.max(sizing)==size1){
+            int contawebs2=0;
+            System.out.println("\nEl conjunto mayor es el de desarrolladores de Web.\n");
+            String[] webs2 = new String[dWeb.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
+            for (int x = 0; x<cantpersonas; x++){
+                if (dWeb.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
+                    webs2[contawebs2] = person[x].getNombre();
+                    contawebs2++;
+                }
+            }
+            //Ordenamos el array
+            Arrays.sort(webs2);
+            System.out.println("-------------");
+            for (int x = 0; x<dWeb.size(); x++){ //Se imprimen los nombres
+                System.out.println(webs2[x]);
+            }
+            System.out.println("-------------");
+        }
+        else if(Collections.max(sizing)==size2){
+            int contacelus3 = 0;
+            System.out.println("\nEl conjunto mayor es el de desarrolladores de Celular.\n");
+            String[] celus3 = new String[dCelular.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
+            for (int x = 0; x<cantpersonas; x++){
+                if (dCelular.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
+                    celus3[contacelus3] = person[x].getNombre();
+                    contacelus3++;
+                }
+            }
+            //Ordenamos el array
+            Arrays.sort(celus3);
+            System.out.println("-------------");
+            for (int x = 0; x<dCelular.size(); x++){ //Se imprimen los nombres
+                System.out.println(celus3[x]);
+            }
+            System.out.println("-------------");
+        }
     }
 }

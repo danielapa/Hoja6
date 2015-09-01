@@ -56,4 +56,18 @@ public class SetFactory {
         }
         return hs3;
     }
+    
+    public Set SetSizing(int implementacion){
+        Set<Integer> sizing=null;
+        if(implementacion==1){
+            sizing = new HashSet<Integer>();
+        }
+        if(implementacion==2){
+            sizing = new TreeSet<Integer>();
+        }
+        if(implementacion==3){
+            sizing = new LinkedHashSet<Integer>();
+        }
+        return sizing;
+    }
 }
