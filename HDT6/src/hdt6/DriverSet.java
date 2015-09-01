@@ -172,36 +172,124 @@ public class DriverSet {
         
         System.out.println(size + "\n" + size1 + "\n" + size2 + "\n");
         
+        int contajavas = 0;
         if(size>size1){
             if(size>size2){
                 System.out.println("El conjunto mayor es el de desarrolladores con Java\n");
+                String[] javas = new String[dJava.size()];
+                for (int x = 0; x<cantpersonas; x++){
+                    if (dJava.contains(person[x])){
+                        javas[contajavas] = person[x].getNombre();
+                        contajavas++;
+                    }
+                }
+                //Ordenamos el array
+                Arrays.sort(javas);
+                System.out.println("-------------");
+                for (int x = 0; x<dJava.size(); x++){
+                    System.out.println(javas[x]);
+                }
+                System.out.println("-------------");
             }
+            int contacelus = 0;
             if(size2>size){
                 if(size2>size1){
                     System.out.println("El conjunto mayor es el de desarrolladores de Celular\n");
+                    String[] celus = new String[dCelular.size()];
+                    for (int x = 0; x<cantpersonas; x++){
+                        if (dCelular.contains(person[x])){
+                            celus[contacelus] = person[x].getNombre();
+                            contacelus++;
+                        }
+                    }
+                    //Ordenamos el array
+                    Arrays.sort(celus);
+                    System.out.println("-------------");
+                    for (int x = 0; x<dJava.size(); x++){
+                        System.out.println(celus[x]);
+                    }
+                    System.out.println("-------------");
                 }
             }
         }
-        
+        int contawebs = 0;
         if(size1>size){
             if(size1>size2){
                 System.out.println("El conjunto mayor es el de desarrolladores de Web.\n");
-            }
-            if(size2>size1){
-                if(size2>size){
-                    System.out.println("El conjunto mayor es el de desarrolladores de Celular\n");
+                String[] webs = new String[dWeb.size()];
+                for (int x = 0; x<cantpersonas; x++){
+                    if (dWeb.contains(person[x])){
+                        webs[contawebs] = person[x].getNombre();
+                        contawebs++;
+                    }
                 }
+                //Ordenamos el array
+                Arrays.sort(webs);
+                System.out.println("-------------");
+                for (int x = 0; x<dWeb.size(); x++){
+                    System.out.println(webs[x]);
+                }
+                System.out.println("-------------");
+            }
+            int contacelus2 = 0;
+            if(size2>size1){
+                //if(size2>size){
+                    System.out.println("El conjunto mayor es el de desarrolladores de Celular\n");
+                    String[] celus2 = new String[dCelular.size()];
+                    for (int x = 0; x<cantpersonas; x++){
+                        if (dCelular.contains(person[x])){
+                            celus2[contacelus2] = person[x].getNombre();
+                            contacelus2++;
+                        }
+                    }
+                    //Ordenamos el array
+                    Arrays.sort(celus2);
+                    System.out.println("-------------");
+                    for (int x = 0; x<dCelular.size(); x++){
+                        System.out.println(celus2[x]);
+                    }
+                    System.out.println("-------------");
+                //}
             }
         }
-        
+        int contacelus3 = 0;
         if(size2>size){
             if(size2>size1){
                 System.out.println("El conjunto mayor es el de desarrolladores de Celular.\n");
+                    String[] celus3 = new String[dCelular.size()];
+                    for (int x = 0; x<cantpersonas; x++){
+                        if (dCelular.contains(person[x])){
+                            celus3[contacelus3] = person[x].getNombre();
+                            contacelus3++;
+                        }
+                    }
+                    //Ordenamos el array
+                    Arrays.sort(celus3);
+                    System.out.println("-------------");
+                    for (int x = 0; x<dCelular.size(); x++){
+                        System.out.println(celus3[x]);
+                    }
+                    System.out.println("-------------");
             }
-            if(size2>size){
-                if(size1>size){
+            int contawebs2 = 0;
+            if(size1>size2){
+                //if(size2>size1){
                     System.out.println("El conjunto mayor es el de desarrolladores de Web.\n");
-                }
+                    String[] webs2 = new String[dWeb.size()];
+                    for (int x = 0; x<cantpersonas; x++){
+                        if (dWeb.contains(person[x])){
+                            webs2[contawebs2] = person[x].getNombre();
+                            contawebs2++;
+                        }
+                    }
+                    //Ordenamos el array
+                    Arrays.sort(webs2);
+                    System.out.println("-------------");
+                    for (int x = 0; x<dWeb.size(); x++){
+                        System.out.println(webs2[x]);
+                    }
+                    System.out.println("-------------");
+                //}
             }
         }
                
