@@ -171,124 +171,7 @@ public class DriverSet {
         int size = dJava.size();
         int size1 = dWeb.size();
         int size2 = dCelular.size();
-/*                
-        int contajavas = 0; //Contador para la posicion del array de los nombres.
-        if(size>size1){ //Si hay mas en java que en web
-            if(size>size2){ //Si hay mas en java que en celulares
-                System.out.println("\nEl conjunto mayor es el de desarrolladores con Java\n");
-                String[] javas = new String[dJava.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
-                for (int x = 0; x<cantpersonas; x++){
-                    if (dJava.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
-                        javas[contajavas] = person[x].getNombre();
-                        contajavas++;
-                    }
-                }
-                //Ordenamos el array
-                Arrays.sort(javas);
-                System.out.println("-------------");
-                for (int x = 0; x<dJava.size(); x++){ //Se imprimen los nombres
-                    System.out.println(javas[x]);
-                }
-                System.out.println("-------------");
-            }
-            int contacelus = 0; //Contador para la posicion del array de los nombres.
-            if(size2>size){ //si hay mas en celulares que en java
-                if(size2>size1){
-                    System.out.println("\nEl conjunto mayor es el de desarrolladores de Celular\n");
-                    String[] celus = new String[dCelular.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
-                    for (int x = 0; x<cantpersonas; x++){
-                        if (dCelular.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
-                            celus[contacelus] = person[x].getNombre();
-                            contacelus++;
-                        }
-                    }
-                    //Ordenamos el array
-                    Arrays.sort(celus);
-                    System.out.println("-------------");
-                    for (int x = 0; x<dJava.size(); x++){ //Se imprimen los nombres
-                        System.out.println(celus[x]);
-                    }
-                    System.out.println("-------------");
-                }
-            }
-        }
-        int contawebs = 0; //Contador para la posicion del array de los nombres.
-        if(size1>size){ //si hay mas en web que en java
-            if(size1>size2){ //si hay mas en web que en celulares
-                System.out.println("\nEl conjunto mayor es el de desarrolladores de Web.\n");
-                String[] webs = new String[dWeb.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
-                for (int x = 0; x<cantpersonas; x++){
-                    if (dWeb.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
-                        webs[contawebs] = person[x].getNombre();
-                        contawebs++;
-                    }
-                }
-                //Ordenamos el array
-                Arrays.sort(webs);
-                System.out.println("-------------");
-                for (int x = 0; x<dWeb.size(); x++){ //Se imprimen los nombres
-                    System.out.println(webs[x]);
-                }
-                System.out.println("-------------");
-            }
-            int contacelus2 = 0; //Contador para la posicion del array de los nombres.
-            if(size2>size1){
-                    System.out.println("\nEl conjunto mayor es el de desarrolladores de Celular\n");
-                    String[] celus2 = new String[dCelular.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
-                    for (int x = 0; x<cantpersonas; x++){
-                        if (dCelular.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
-                            celus2[contacelus2] = person[x].getNombre();
-                            contacelus2++;
-                        }
-                    }
-                    //Ordenamos el array
-                    Arrays.sort(celus2);
-                    System.out.println("-------------");
-                    for (int x = 0; x<dCelular.size(); x++){ //Se imprimen los nombres
-                        System.out.println(celus2[x]);
-                    }
-                    System.out.println("-------------");
-            }
-        }
-        int contacelus3 = 0; //Contador para la posicion del array de los nombres.
-        if(size2>size){
-            if(size2>size1){
-                System.out.println("\nEl conjunto mayor es el de desarrolladores de Celular.\n");
-                    String[] celus3 = new String[dCelular.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
-                    for (int x = 0; x<cantpersonas; x++){
-                        if (dCelular.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
-                            celus3[contacelus3] = person[x].getNombre();
-                            contacelus3++;
-                        }
-                    }
-                    //Ordenamos el array
-                    Arrays.sort(celus3);
-                    System.out.println("-------------");
-                    for (int x = 0; x<dCelular.size(); x++){ //Se imprimen los nombres
-                        System.out.println(celus3[x]);
-                    }
-                    System.out.println("-------------");
-            }
-            int contawebs2 = 0; //Contador para la posicion del array de los nombres.
-            if(size1>size2){
-                    System.out.println("\nEl conjunto mayor es el de desarrolladores de Web.\n");
-                    String[] webs2 = new String[dWeb.size()]; //Hacemos el array de los nombres dependiendo del tamano del Set
-                    for (int x = 0; x<cantpersonas; x++){
-                        if (dWeb.contains(person[x])){ //Solo si esta contenido en el Set se agrega el nombre y le sumamos 1 al contador de la posicion.
-                            webs2[contawebs2] = person[x].getNombre();
-                            contawebs2++;
-                        }
-                    }
-                    //Ordenamos el array
-                    Arrays.sort(webs2);
-                    System.out.println("-------------");
-                    for (int x = 0; x<dWeb.size(); x++){ //Se imprimen los nombres
-                        System.out.println(webs2[x]);
-                    }
-                    System.out.println("-------------");
-            }
-        }
-               */
+
        for(int y=0; y<cantpersonas;y++){
             System.out.println(person[y]);
             if (person[y]==null){
@@ -341,7 +224,6 @@ public class DriverSet {
         
         //Inciso a        
         System.out.println("\n");
-        
         
         for (int x = 0; x<cantpersonas; x++){
             if (person[x] != null){
@@ -421,11 +303,10 @@ public class DriverSet {
             }
             //Ordenamos el array
             Arrays.sort(javas);
-            System.out.println("-------------");
+            System.out.println("El listado de nombres es: ");
             for (int x = 0; x<dJava.size(); x++){ //Se imprimen los nombres
                 System.out.println(javas[x]);
             }
-            System.out.println("-------------");
         }
         else if(Collections.max(sizing)==size1){
             int contawebs2=0;
@@ -438,12 +319,11 @@ public class DriverSet {
                 }
             }
             //Ordenamos el array
-            Arrays.sort(webs2);
-            System.out.println("-------------");
+            Arrays.sort(webs2);           
+            System.out.println("El listado de nombres es: ");
             for (int x = 0; x<dWeb.size(); x++){ //Se imprimen los nombres
                 System.out.println(webs2[x]);
             }
-            System.out.println("-------------");
         }
         else if(Collections.max(sizing)==size2){
             int contacelus3 = 0;
@@ -457,11 +337,10 @@ public class DriverSet {
             }
             //Ordenamos el array
             Arrays.sort(celus3);
-            System.out.println("-------------");
+            System.out.println("El listado de nombres es: ");
             for (int x = 0; x<dCelular.size(); x++){ //Se imprimen los nombres
                 System.out.println(celus3[x]);
             }
-            System.out.println("-------------");
         }
     }
 }
